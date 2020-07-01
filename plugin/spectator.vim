@@ -93,7 +93,7 @@ function! s:SpecSkeleton(path) abort
 
   let class_name = s:Camelize(fnamemodify(path, ':t'))
 
-  let template .= 'RSpec.describe "' . join(join(modules, '::'), class_name) . '" do' . "\n"
+  let template .= 'RSpec.describe "' . join(modules, '::') . '::' . class_name . '" do' . "\n"
   let template .= "it 'works' do\n"
   let template .= "end\n"
   let template .= "end"
